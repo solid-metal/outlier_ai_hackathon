@@ -1,9 +1,11 @@
 // desktopBar.jsx
 import { styled } from "@mui/material"
+import Menu from "../menu/menu";
 import ArrowDownBtn from "./arrowDownBtn";
 import Search from "./search";
 
 const BarDiv = styled("div")(({ theme }) => ({
+    zIndex:1,
     fontSize: 14,
     lineHeight: "14px",
     background: "var(--theme-secondary-dark)",
@@ -36,8 +38,9 @@ const BarDiv = styled("div")(({ theme }) => ({
     }
 }));
 
-function DesktopBar() {
-    return <BarDiv>
+function DesktopBar({openMenu=()=>{}}) {
+    return <>
+    <BarDiv>
         {/* nav left */}
         <div style={{
             padding: "4px 0 0 0",
@@ -48,7 +51,7 @@ function DesktopBar() {
                 marginLeft: 15,
                 padginTop: 4
             }}>
-                <a style={{
+                <a  style={{
                     display: "flex",
                     margin: 1,
                     padding: "1px 8px 0 6px"
@@ -72,7 +75,7 @@ function DesktopBar() {
                 marginTop: 8
             }}>
                 <span>
-                    <a style={{
+                    <a  style={{
                         margin: "5px 2px 5px 0px",
                         padding: "0 9px",
                         display: "flex"
@@ -129,7 +132,7 @@ function DesktopBar() {
                     margin: "0 1px",
                     padding: "0 6px 5px 7px"
                 }}>
-                    <a style={{
+                    <a  style={{
                         margin: 1,
                         padding: "0 2px 5px 7px"
                     }}>
@@ -173,7 +176,7 @@ function DesktopBar() {
                     color: "#fff",
                     fontSize: "12px",
                 }}>
-                    <a style={{
+                    <a  style={{
                         // padding:"0 4px 8px 9px",
                         // height:"40px"
                     }}>
@@ -201,7 +204,7 @@ function DesktopBar() {
                     <span style={{ fontSize: 14, fontWeight: 700 }}>& Orders</span>
                 </a>
                 {/* cart */}
-                <a style={{
+                <a  style={{
                     marginRight:1,
                     padding:"0 9px 11px 9px",
                     display:"flex",
@@ -240,6 +243,8 @@ function DesktopBar() {
             </div>
         </div>
     </BarDiv>
+    <Menu openMenu={openMenu}/>
+    </>
 }
 
 function NavSearch(){
@@ -292,3 +297,4 @@ function NavSearch(){
 
 
 export default DesktopBar
+export { NavSearch }

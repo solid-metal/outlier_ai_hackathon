@@ -2,6 +2,7 @@
 
 import navlinks from "../utils/navlinks.json"
 import AppBar from "../components/appBar/appBar"
+import Menu from "../components/menu/menu"
 import { Route, Routes } from "react-router-dom"
 
 // ==========
