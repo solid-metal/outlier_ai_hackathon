@@ -7,7 +7,7 @@ import { Route, Routes } from "react-router-dom"
 
 // ==========
 
-
+import HomePage from "../page/home/home"
 
 // ==========
 
@@ -16,7 +16,7 @@ function AppRouting() {
         <AppBar />
         <Routes>
             {/* home */}
-            <Route path={navlinks.home} element={<h1>Home</h1>} />
+            <Route path={navlinks.home} element={<HomePage/>} />
             {/* product */}
             <Route path={navlinks.product} element={<h1>Product Page</h1>} />
             {/* general page */}

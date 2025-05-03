@@ -9,7 +9,7 @@ const HamburgerMenuDiv = styled(motion.div)(({ theme }) => ({
     zIndex:100,
     width:"100vw",
     background:"#0008",
-    display:"flex"
+    display:"flex",
 }));
 
 const MenuDiv = styled(motion.div)(({ theme }) => ({
@@ -20,13 +20,21 @@ const MenuDiv = styled(motion.div)(({ theme }) => ({
 }));
 
 function HamburgerMenu({open=false,openMenu=()=>{}}){
-    return <HamburgerMenuDiv animate={open?{
+    return <HamburgerMenuDiv
+    initial={{
+        background:"#0000"
+    }}
+     animate={open?{
         background:"#0009"
     }:{
         background:"#0000",
         pointerEvents:"none"
     }}>
-        <MenuDiv animate={open?{
+        <MenuDiv 
+        initial={{
+            x:"-100%"
+        }}
+         animate={open?{
             x:"0%"
         }:{
             x:"-100%"
@@ -40,6 +48,10 @@ function HamburgerMenu({open=false,openMenu=()=>{}}){
         <motion.div onClick={()=>{openMenu(false)}} style={{
             background:"transparent",
             flexGrow:1,
+        }}
+        initial={{
+            x:"-100%",
+            opacity:0
         }}
         animate={open?{
             x:0,
