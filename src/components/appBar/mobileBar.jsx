@@ -30,7 +30,7 @@ function MobileBar({ openMenu = () => { } }) {
                 backgroundImage: "url(/nav_sprite_amazon.png)",
                 width: "80px",
                 height: "35px",
-                backgroundPosition: "-185px -222px",
+                backgroundPosition: "-185px -223px",
                 backgroundSize: "275px"
             }}></span>
             <div>
@@ -99,8 +99,16 @@ function MobileBar({ openMenu = () => { } }) {
             alignItems:'center',
             color:"#fff",
             height:"35px",
-            padding:"0 10px"
+            padding:"5px 10px"
         }}>
+            <span style={{
+                backgroundImage:"url(/nav_sprite_amazon.png)",
+                height:20,
+                width:20,
+                backgroundPosition:"-71px -340px",
+                marginRight:"6px"
+
+            }}></span>
             Delivering to Delhi 110001 - Update location
         </div>
     </div>
