@@ -13,13 +13,15 @@ import deal10 from "../../assets/mobileDeals/mobileDeal10.jpeg"
 function MobileDeals(){
     return <div style={{
         background:"rgb(247,233,113)",
-        padding:10,
+        padding:"10px",
         lineHeight:0,
         height:73,
         display:"flex",
-        justifyContent:"center",
+        gap:"10px",
+        // width:"100%",
+        maxWidth:"calc(100% - 20px)",
+        justifyContent:"left",
         alignItems:'center',
-        maxWidth:"100%",
         overflow:"auto"
     }}>
         {
@@ -73,7 +75,7 @@ function MobileDeals(){
 
 function Elem({image,title}){
     return <div style={{
-        margin:"0 10px",
+        margin:"0px",
         display:"flex",
         flexDirection:"column",
         justifyContent:"center",
