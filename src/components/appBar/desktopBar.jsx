@@ -5,6 +5,8 @@ import ArrowDownBtn from "./arrowDownBtn";
 import Search from "./search";
 
 const BarDiv = styled("div")(({ theme }) => ({
+    position:"sticky",
+    top:0,
     zIndex:1,
     fontSize: 14,
     lineHeight: "14px",

@@ -8,7 +8,9 @@ import { NavSearch } from "./desktopBar"
 function MobileBar({ openMenu = () => { } }) {
     return <div style={{
         zIndex: 1,
-        background: "var(--theme-secondary-main)"
+        background: "var(--theme-secondary-main)",
+        position:"sticky",
+        top:0
     }}>
         {/*  */}
         <div style={{
@@ -80,7 +82,7 @@ function MobileBar({ openMenu = () => { } }) {
             </div>
         </div>
         {/* search */}
-        <div style={{ borderRadius: "20px", overflow: "hidden",marginTop:5 }}>
+        <div style={{ position:"sticky",top:0,borderRadius: "20px", overflow: "hidden",marginTop:5 }}>
             <NavSearch />
         </div>
         {/* deals */}
