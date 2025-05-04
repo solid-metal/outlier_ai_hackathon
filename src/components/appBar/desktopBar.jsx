@@ -3,6 +3,8 @@ import { styled } from "@mui/material"
 import Menu from "../menu/menu";
 import ArrowDownBtn from "./arrowDownBtn";
 import Search from "./search";
+import { useNavigate } from "react-router-dom";
+import navLinks from "../../utils/navlinks.json"
 
 const BarDiv = styled("div")(({ theme }) => ({
     position:"sticky",
@@ -41,6 +43,7 @@ const BarDiv = styled("div")(({ theme }) => ({
 }));
 
 function DesktopBar({openMenu=()=>{}}) {
+    const navigate=useNavigate()
     return <>
     <BarDiv>
         {/* nav left */}
@@ -49,9 +52,10 @@ function DesktopBar({openMenu=()=>{}}) {
             display: "flex"
         }}>
             {/* nav logo */}
-            <div style={{
+            <div onClick={()=>{navigate("/")}} style={{
                 marginLeft: 15,
-                padginTop: 4
+                padginTop: 4,
+                cursor:"pointer"
             }}>
                 <a  style={{
                     display: "flex",
@@ -71,10 +75,11 @@ function DesktopBar({openMenu=()=>{}}) {
                 </a>
             </div>
             {/* nav geo location */}
-            <div style={{
+            <div onClick={()=>{navigate(navLinks.general)}} style={{
                 color: "#fff",
                 marginLeft: "6px",
-                marginTop: 8
+                marginTop: 8,
+                cursor:"pointer"
             }}>
                 <span>
                     <a  style={{
@@ -130,9 +135,10 @@ function DesktopBar({openMenu=()=>{}}) {
                 color:"#fff"
             }}>
                 {/* language */}
-                <div style={{
+                <div onClick={()=>{navigate(navLinks.general)}} style={{
                     margin: "0 1px",
-                    padding: "0 6px 5px 7px"
+                    padding: "0 6px 5px 7px",
+                    cursor:"pointer"
                 }}>
                     <a  style={{
                         margin: 1,
@@ -171,12 +177,13 @@ function DesktopBar({openMenu=()=>{}}) {
                     </a>
                 </div>
                 {/* account */}
-                <div style={{
+                <div onClick={()=>{navigate(navLinks.general)}} style={{
                     marginTop:4,
                     // background:"red",
                     padding: "0 9px",
                     color: "#fff",
                     fontSize: "12px",
+                    cursor:"pointer"
                 }}>
                     <a  style={{
                         // padding:"0 4px 8px 9px",
@@ -195,22 +202,24 @@ function DesktopBar({openMenu=()=>{}}) {
                     </a>
                 </div>
                 {/* order history */}
-                <a style={{
+                <a onClick={()=>{navigate(navLinks.general)}} style={{
                     marginTop:4,
                     color: "#fff",
                     // padding: "0 9px 10px 9px",
                     display: "flex",
-                    flexDirection: "column"
+                    flexDirection: "column",
+                    cursor:"pointer"
                 }}>
                     <span style={{ fontSize: 12 }}>Retuns</span>
                     <span style={{ fontSize: 14, fontWeight: 700 }}>& Orders</span>
                 </a>
                 {/* cart */}
-                <a  style={{
+                <a onClick={()=>{navigate(navLinks.general)}} style={{
                     marginRight:1,
                     padding:"0 9px 11px 9px",
                     display:"flex",
-                    marginTop:4
+                    marginTop:4,
+                    cursor:"pointer"
                 }}>
                     {/* cart and count */}
                     <div style={{
@@ -235,9 +244,10 @@ function DesktopBar({openMenu=()=>{}}) {
                         </span>
                     </div>
                     {/* cart text */}
-                    <div style={{
+                    <div  style={{
                         position:"relative",
-                        bottom:-15
+                        bottom:-15,
+                        cursor:"pointer"
                     }}>
                         <span style={{fontSize:14,fontWeight:700}}>Cart</span>
                     </div>

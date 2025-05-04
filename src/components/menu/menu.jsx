@@ -1,8 +1,9 @@
 // menu.jsx
 import hamburgerVector from "../../assets/hamburger_vector.svg"
-
+import { useNavigate } from "react-router-dom";
 import { styled } from "@mui/material"
 import menuItems from "../../utils/menu.json"
+import navLinks from "../../utils/navlinks.json"
 
 const MenuDiv = styled("div")(({ theme }) => ({
     padding:"0 20px",
@@ -14,6 +15,7 @@ const MenuDiv = styled("div")(({ theme }) => ({
 }));
 
 function Menu({openMenu}){
+    const navigate=useNavigate()
     return <MenuDiv>
         {/* hambur Menu */}
         <MenuElem onClick={()=>{openMenu(true)}}>
@@ -23,7 +25,8 @@ function Menu({openMenu}){
             </div>
         </MenuElem>
         {/* new feature */}
-        <div style={{
+        <div onClick={()=>{navigate(navLinks.product)}} style={{
+            cursor:"pointer",
             position:"relative",
             color:"#fff",
             display:"flex",
@@ -41,7 +44,7 @@ function Menu({openMenu}){
             <p>Price History</p>
         </div>
         {menuItems.map((elem,ind)=>(
-            <MenuElem>
+            <MenuElem onClick={()=>{navigate(navLinks.general)}}>
                 <p>{elem}</p>
             </MenuElem>
         ))}

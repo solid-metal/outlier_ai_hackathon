@@ -1,7 +1,10 @@
 // search.jsx
 import { styled } from "@mui/material"
+import { useNavigate } from "react-router-dom";
+import navLinks from "../../utils/navlinks.json"
 
 const SearchDiv = styled("div")(({ theme }) => ({
+    cursor:"pointer",
     width:45,
     height:"100%",
         background:"rgb(252,184,99)",
@@ -17,7 +20,8 @@ const SearchDiv = styled("div")(({ theme }) => ({
         }
 }));
 function Search(){
-    return <SearchDiv>
+    const navigate=useNavigate()
+    return <SearchDiv onClick={()=>{navigate(navLinks.general)}}>
         <span></span>
     </SearchDiv>
 }

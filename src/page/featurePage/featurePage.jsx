@@ -75,7 +75,7 @@ function FeaturePage() {
                     borderRadius: 8,
                     position:"relative",
                     marginTop:50,
-                    marginBottom:200
+                    marginBottom:580
                 }}>
                     <span style={{
                         position:"absolute",
