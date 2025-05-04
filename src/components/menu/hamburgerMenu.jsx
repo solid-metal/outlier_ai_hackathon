@@ -4,14 +4,18 @@ import MenuItem from "./menuItem";
 import { motion } from "framer-motion";
 import corssSvg from "../../assets/crossVector.svg"
 import MenuSection from "./menuSec";
+import { useNavigate } from "react-router-dom";
+import navlinks from "../../utils/navlinks.json"
 
 const HamburgerMenuDiv = styled(motion.div)(({ theme }) => ({
     position: "absolute",
-    height: "100vh",
+    top:0,
+    height: "100%",
     zIndex: 100,
     width: "100vw",
     background: "#0008",
     display: "flex",
+    overflow:"auto"
 }));
 
 const MenuDiv = styled(motion.div)(({ theme }) => ({
@@ -22,6 +26,7 @@ const MenuDiv = styled(motion.div)(({ theme }) => ({
 }));
 
 function HamburgerMenu({ open = false, openMenu = () => { } }) {
+    const navigate=useNavigate()
     return <HamburgerMenuDiv
         initial={{
             background: "#0000"
@@ -63,7 +68,7 @@ function HamburgerMenu({ open = false, openMenu = () => { } }) {
             </div>
             {/* menu sections */}
             <MenuSection title="New Feature">
-                <MenuItem><span style={{
+                <MenuItem closeMenu={()=>{openMenu(false)}} path={navlinks.product}><span style={{
                     backgroundImage:"linear-gradient(to right,magenta,orange)",
                     fontWeight:"bolder",
                     backgroundClip:"text",
@@ -74,17 +79,17 @@ function HamburgerMenu({ open = false, openMenu = () => { } }) {
             </MenuSection>
             {/* menu sections */}
             <MenuSection title="Trending">
-                <MenuItem>Bestsellers</MenuItem>
-                <MenuItem>New Releases</MenuItem>
-                <MenuItem>Movers and Shakers</MenuItem>
+                <MenuItem closeMenu={()=>{openMenu(false)}}>Bestsellers</MenuItem>
+                <MenuItem closeMenu={()=>{openMenu(false)}}>New Releases</MenuItem>
+                <MenuItem closeMenu={()=>{openMenu(false)}}>Movers and Shakers</MenuItem>
                
             </MenuSection>
             
             {/* help and settings */}
             <MenuSection title="Help and Settings">
-                <MenuItem>Your Account</MenuItem>
-                <MenuItem>Customer Service</MenuItem>
-                <MenuItem>Settings</MenuItem>
+                <MenuItem closeMenu={()=>{openMenu(false)}}>Your Account</MenuItem>
+                <MenuItem closeMenu={()=>{openMenu(false)}}>Customer Service</MenuItem>
+                <MenuItem closeMenu={()=>{openMenu(false)}}>Settings</MenuItem>
 
             </MenuSection>
         </MenuDiv>

@@ -1,6 +1,6 @@
 {
     "home":"/",
-    "product":"product",
-    "notFound":"notFound",
-    "general":"pageNotBuild"
+    "product":"/featurePage",
+    "notFound":"/notFound",
+    "general":"/pageNotBuild"
 }

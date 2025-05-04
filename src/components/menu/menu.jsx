@@ -1,8 +1,7 @@
 // menu.jsx
-import HamburgerMenu from "./hamburgerMenu"
 import hamburgerVector from "../../assets/hamburger_vector.svg"
 
-import { MenuItem, styled } from "@mui/material"
+import { styled } from "@mui/material"
 import menuItems from "../../utils/menu.json"
 
 const MenuDiv = styled("div")(({ theme }) => ({
