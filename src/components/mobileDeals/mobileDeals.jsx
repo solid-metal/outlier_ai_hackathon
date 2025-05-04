@@ -36,7 +36,7 @@ function MobileDeals(){
                 },
                 {
                     img:deal3,
-                    title:"Mx Player"
+                    title:"MxPlayer"
                 },
                 {
                     img:deal4,
